@@ -70,14 +70,15 @@ void AriacLogicalCameraPlugin::Load(gazebo::sensors::SensorPtr _sensor, sdf::Ele
   impl_->ros_node_ = gazebo_ros::Node::Get(_sdf);
 
    // Set list of models to publish
-  impl_->parts_to_publish_ = {"pump", "battery", "regulator", "sensor"};
-  impl_->colors_ = {"red", "green", "blue", "orange", "purple"};
+  impl_->parts_to_publish_ = {"pump", "battery", "regulator", "sensor","Banana"};
+  impl_->colors_ = {"red", "green", "blue", "orange", "purple","yellow"};
 
   impl_->part_types_ = {
     {"battery", ariac_msgs::msg::Part::BATTERY},
     {"pump", ariac_msgs::msg::Part::PUMP},
     {"regulator", ariac_msgs::msg::Part::REGULATOR},
     {"sensor", ariac_msgs::msg::Part::SENSOR},
+    {"Banana", ariac_msgs::msg::Part::BATTERY},
   };
 
   impl_->part_colors_ = {
@@ -86,6 +87,7 @@ void AriacLogicalCameraPlugin::Load(gazebo::sensors::SensorPtr _sensor, sdf::Ele
     {"blue", ariac_msgs::msg::Part::BLUE},
     {"purple", ariac_msgs::msg::Part::PURPLE},
     {"orange", ariac_msgs::msg::Part::ORANGE},
+    {"yellow", ariac_msgs::msg::Part::ORANGE},
   };
 
   impl_->camera_name_ = _sdf->Get<std::string>("camera_name");
