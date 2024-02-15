@@ -114,9 +114,9 @@ void AriacLogicalCameraPlugin::Load(gazebo::sensors::SensorPtr _sensor, sdf::Ele
 
 void AriacLogicalCameraPluginPrivate::OnUpdate()
 {
-  if (!sensor_health_.logical_camera) {
-    return;
-  }
+  // if (!sensor_health_.logical_camera) {
+  //   return;
+  // }
 
   const auto & image = this->sensor_->Image();
 
