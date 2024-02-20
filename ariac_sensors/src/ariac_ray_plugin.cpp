@@ -159,9 +159,9 @@ void AriacRayPluginPrivate::ReadLaserScan(ConstLaserScanStampedPtr & _msg)
 
 void AriacRayPluginPrivate::PublishBreakBeamStatus(ConstLaserScanStampedPtr & _msg)
 {
-  if (!sensor_health_.break_beam) {
-    return;
-  }
+  // if (!sensor_health_.break_beam) {
+  //   return;
+  // }
 
   auto ls = gazebo_ros::Convert<sensor_msgs::msg::LaserScan>(*_msg, 0.0);
   status_msg_.header.frame_id = frame_name_;
@@ -192,9 +192,9 @@ void AriacRayPluginPrivate::PublishBreakBeamStatus(ConstLaserScanStampedPtr & _m
 
 void AriacRayPluginPrivate::PublishRange(ConstLaserScanStampedPtr & _msg)
 {
-  if (!sensor_health_.proximity) {
-    return;
-  }
+  // if (!sensor_health_.proximity) {
+  //   return;
+  // }
 
   // Convert Laser scan to range
   auto range_msg = gazebo_ros::Convert<sensor_msgs::msg::Range>(*_msg);
@@ -205,9 +205,9 @@ void AriacRayPluginPrivate::PublishRange(ConstLaserScanStampedPtr & _msg)
 
 void AriacRayPluginPrivate::PublishLaserScan(ConstLaserScanStampedPtr & _msg)
 {
-  if (!sensor_health_.laser_profiler) {
-    return;
-  }
+  // if (!sensor_health_.laser_profiler) {
+  //   return;
+  // }
 
   // Convert Laser scan to ROS LaserScan
   auto ls = gazebo_ros::Convert<sensor_msgs::msg::LaserScan>(*_msg, 0.0);
@@ -217,9 +217,9 @@ void AriacRayPluginPrivate::PublishLaserScan(ConstLaserScanStampedPtr & _msg)
 
 void AriacRayPluginPrivate::PublishPointCloud(ConstLaserScanStampedPtr & _msg)
 {
-  if (!sensor_health_.lidar) {
-    return;
-  }
+  // if (!sensor_health_.lidar) {
+  //   return;
+  // }
 
   // Convert Laser scan to PointCloud
   auto pc = gazebo_ros::Convert<sensor_msgs::msg::PointCloud>(*_msg, 0.0);
