@@ -70,8 +70,8 @@ void AriacLogicalCameraPlugin::Load(gazebo::sensors::SensorPtr _sensor, sdf::Ele
   impl_->ros_node_ = gazebo_ros::Node::Get(_sdf);
 
    // Set list of models to publish
-  impl_->parts_to_publish_ = {"pump", "battery", "regulator", "sensor","Banana"};
-  impl_->colors_ = {"red", "green", "blue", "orange", "purple","yellow"};
+  impl_->parts_to_publish_ = {"pump", "battery", "regulator", "sensor","Banana","aruco_cube","small_box"};
+  impl_->colors_ = {"red", "green", "blue", "orange", "purple","yellow","blue"};
 
   impl_->part_types_ = {
     {"battery", ariac_msgs::msg::Part::BATTERY},
@@ -79,6 +79,8 @@ void AriacLogicalCameraPlugin::Load(gazebo::sensors::SensorPtr _sensor, sdf::Ele
     {"regulator", ariac_msgs::msg::Part::REGULATOR},
     {"sensor", ariac_msgs::msg::Part::SENSOR},
     {"Banana", ariac_msgs::msg::Part::BATTERY},
+    {"aruco_cube", ariac_msgs::msg::Part::BATTERY},
+    {"small_box", ariac_msgs::msg::Part::BATTERY},
   };
 
   impl_->part_colors_ = {
